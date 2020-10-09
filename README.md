@@ -1,6 +1,6 @@
 # aw-watcher-table
 
-An Activity Watch watcher which monitors whether you have set your height-adjustable table to sitting or standing.
+An [Activity Watch](https://github.com/ActivityWatch/activitywatch) watcher which monitors whether you have set your height-adjustable table to sitting or standing.
 
 ![1](img/aw-watcher-table-1.jpg)
 
@@ -48,7 +48,15 @@ poetry install # install required packages
 ```
 poetry run aw-watcher-table [--testing] [-v] [--verbose]
 ```
-### Build for Windows (WIP)
+### Build
+#### Windows
 ```
 pyinstaller --clean aw.spec
 ```
+### Deploy
+#### Windows
+1. Move the aw-table folder inside the dist folder into the Activity Watch installation location
+2. Restart [Activity Watch](https://github.com/ActivityWatch/activitywatch)
+3. Right click the Activity Watch tray icon. Under modules you should see the aw-table-watcher.Check it to enable autostart.
+
+![2](img/aw-watcher-table-deployment.jpg)
