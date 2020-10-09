@@ -1,4 +1,4 @@
-# aw-watcher-table (Work in progress)
+# aw-watcher-table
 
 An Activity Watch watcher which monitors whether you have set your height-adjustable table to sitting or standing.
 
@@ -15,7 +15,7 @@ Unfortunately my adjustable table has no API or something similar. Therefore I n
 I have used an [ESP8266](https://en.wikipedia.org/wiki/ESP8266) as micro controller. It has in-build Wifi and GPIOs to controll sensors. As distance sensor I have used an [HC-SR04 Ultrasonic Sensor](http://wiki.sunfounder.cc/index.php?title=Ultrasonic_Module), because I had it laying around.
 
 ### Case
-I printed my case using the Prusa I3 MK3. As modeling software I used Fusion360. You can download the 3D model [here](no yet!).
+I printed my case using the Prusa I3 MK3. As modeling software I used Fusion360. You can download the 3D model [here (Thingiverse)](https://www.thingiverse.com/thing:4619348).
 
 ![0](img/aw-watcher-table-0.jpg)
 
