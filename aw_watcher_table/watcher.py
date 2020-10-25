@@ -22,6 +22,8 @@ class TableWatcher:
         self.client = ActivityWatchClient("aw-watcher-table", testing=testing)
         self.bucket_id = "{}_{}".format(self.client.client_name, self.client.client_hostname)
 
+        self.last_table_height = None
+
     def run(self):
         logger.info("aw-watcher-table started")
 
@@ -49,7 +51,16 @@ class TableWatcher:
         try:
             r = requests.get(f'http://{self.settings.ip}/measure')
             table_height = r.json()['table_height']
+
+            if self.last_table_height is None:
+                self.last_table_height = table_height
+                return table_height
+
+            if abs(self.last_table_height - table_height) < self.settings.min_change_height:
+                table_height = self.last_table_height
+
             return table_height
+
         except Exception as ex:
             logger.warning(f'aw-watcher-table: Measurement failed! Please make sure http://{self.settings.ip}/measure '
                            f'delivers a JSON object which includes the field "table_height"')
