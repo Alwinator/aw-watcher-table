@@ -1,7 +1,6 @@
 import logging
 import requests
 import datetime
-import sys
 from time import sleep
 from typing import Optional
 
@@ -22,8 +21,6 @@ class TableWatcher:
         self.client = ActivityWatchClient("aw-watcher-table", testing=testing)
         self.bucket_id = "{}_{}".format(self.client.client_name, self.client.client_hostname)
 
-        self.last_table_height = None
-
     def run(self):
         logger.info("aw-watcher-table started")
 
@@ -40,8 +37,7 @@ class TableWatcher:
         event = Event(
             timestamp=datetime.datetime.now(datetime.timezone.utc),
             data={
-                "status": self.get_table_status(table_height),
-                "table_height": table_height
+                "status": self.get_table_status(table_height)
             }
         )
         # 10 seconds request timeout
@@ -50,16 +46,7 @@ class TableWatcher:
     def get_table_height(self) -> Optional[int]:
         try:
             r = requests.get(f'http://{self.settings.ip}/measure')
-            table_height = r.json()['table_height']
-
-            if self.last_table_height is None:
-                self.last_table_height = table_height
-                return table_height
-
-            if abs(self.last_table_height - table_height) < self.settings.min_change_height:
-                table_height = self.last_table_height
-
-            return table_height
+            return r.json()['table_height']
 
         except Exception as ex:
             logger.warning(f'aw-watcher-table: Measurement failed! Please make sure http://{self.settings.ip}/measure '
