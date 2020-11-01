@@ -3,8 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['aw_watcher_table\\__init__.py'],
-             pathex=['C:\\Programming\\Python\\aw-watcher-table'],
+a = Analysis(['aw_watcher_table/__init__.py'],
              binaries=[],
              datas=[],
              hiddenimports=[],
