@@ -54,11 +54,7 @@ class TableWatcher:
             return None
 
     def get_table_status(self, table_height):
-        if table_height is None:
-            return 'unknown'
-        if table_height > self.settings.standing_min_height:
-            return 'standing'
-        return 'sitting'
+        return self.settings.get_height_level(table_height)
 
     def heartbeat_loop(self):
         while True:

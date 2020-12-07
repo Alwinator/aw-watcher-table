@@ -58,7 +58,6 @@ pyinstaller --clean aw_windows.spec
 pyinstaller --clean aw_linux.spec
 ```
 ### Test
-#### Windows / Linux
 1. Move the aw-watcher-table folder inside the dist folder into the Activity Watch installation location
 2. Restart [Activity Watch](https://github.com/ActivityWatch/activitywatch)
 3. Right click the Activity Watch tray icon. Under modules you should see the aw-table-watcher. Check it to start the aw-watcher-table.
