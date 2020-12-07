@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aw-watcher-table"
-version = "1.0.2"
+version = "1.1.0"
 description = "Monitors whether you have set your height-adjustable table to sitting or standing."
 authors = ["Alwin Schuster"]
 license = "MPL-2.0"
