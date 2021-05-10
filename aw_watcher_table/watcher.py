@@ -60,6 +60,10 @@ class TableWatcher:
         while True:
             try:
                 table_height = self.get_table_height()
+                if table_height is None:
+                    logger.warning(
+                        f'aw-watcher-table: table_height corrected from None to -1!')
+                    table_height = -1
                 self.ping(table_height)
                 sleep(self.settings.poll_time)
             except KeyboardInterrupt:
