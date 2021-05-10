@@ -65,7 +65,7 @@ pyinstaller --clean aw_linux.spec
 ![2](img/aw-watcher-table-deployment.jpg)
 
 ### Deploy
-1. Go to the config directory. You can find the path for your OS [here](https://docs.activitywatch.net/en/latest/getting-started.html#config).
+1. Go to the config directory. You can find the path for your OS [here](https://docs.activitywatch.net/en/latest/directories.html#config-directory).
 2. In the aw-qt directory you should find a **aw-qt.ini** file.
 3. Add the aw-table-watcher to autostart_modules to enable auto-start. It should look like this:
 
