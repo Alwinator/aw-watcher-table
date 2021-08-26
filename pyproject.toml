@@ -5,8 +5,8 @@ description = "Monitors whether you have set your height-adjustable table to sit
 authors = ["Alwin Schuster"]
 license = "MPL-2.0"
 homepage = "https://alwinschuster.at"
-repository = "https://git.alwinschuster.at/alwin.schuster/activity-watcher-height-adjustable-table"
-documentation = "https://git.alwinschuster.at/alwin.schuster/activity-watcher-height-adjustable-table"
+repository = "https://github.com/Alwinator/aw-watcher-table"
+documentation = "https://github.com/Alwinator/aw-watcher-table"
 
 [tool.poetry.scripts]
 aw-watcher-table = "aw_watcher_table:main"
