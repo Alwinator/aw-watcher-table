@@ -1,4 +1,4 @@
-name: Create releasees for Linux and Windows
+name: Create releases for Linux and Windows
 
 on:
   push:
@@ -25,6 +25,9 @@ jobs:
         uses: abatilo/actions-poetry@v2.0.0
         with:
           poetry-version: ${{ matrix.poetry-version }}
+
+      - name: Disable virtualenvs
+        run: poetry config virtualenvs.create false
 
       - name: Install dependencies
         run: poetry install
