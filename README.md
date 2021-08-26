@@ -49,13 +49,8 @@ poetry install # install required packages
 poetry run aw-watcher-table [--testing] [-v] [--verbose]
 ```
 ### Build
-#### Windows
 ```
-pyinstaller --clean aw_windows.spec
-```
-#### Linux
-```
-pyinstaller --clean aw_linux.spec
+pyinstaller --clean pyinstaller.spec
 ```
 ### Test
 1. Move the aw-watcher-table folder inside the dist folder into the Activity Watch installation location

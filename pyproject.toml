@@ -12,7 +12,7 @@ documentation = "https://github.com/Alwinator/aw-watcher-table"
 aw-watcher-table = "aw_watcher_table:main"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.9"
 requests = "^2.24.0"
 aw-core = {git = "https://github.com/ActivityWatch/aw-core.git"}
 aw-client = {git = "https://github.com/ActivityWatch/aw-client.git"}
