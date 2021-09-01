@@ -5,7 +5,7 @@ block_cipher = None
 
 a = Analysis(['aw_watcher_table/__init__.py'],
              binaries=[],
-             datas=[],
+             datas=[('static', 'static')],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],

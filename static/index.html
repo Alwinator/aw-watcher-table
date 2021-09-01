@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Watcher Page</title>
+    <style>
+        span{font-family: sans-serif;}
+    </style>
+</head>
+<body>
+<span id="content"></span>
+<script type="application/javascript">
+    const urlParams = new URLSearchParams(window.location.search);
+    const view = urlParams.get('view');
+    let data = urlParams.get('data');
+
+    if(view && data){
+        data = JSON.parse(data);
+
+        function getDurationOfStatus(status){
+            return data
+                .filter(e => e.data.status === status)
+                .map(e => e.duration)
+                .reduce((a, b) => a + b, 0);
+        }
+
+        const totalStanding = getDurationOfStatus("standing");
+        const totalSitting = getDurationOfStatus("sitting");
+        const total = totalStanding + totalSitting;
+
+        if(view === "percent"){
+            const percentStanding = (totalStanding / total) * 100;
+            const percentSitting = (totalSitting / total) * 100;
+
+            document.getElementById("content").innerHTML =
+                `<b>Table Stats Percent</b><br>`+
+                `Standing: ${percentStanding.toFixed(2)}%<br>`+
+                `Sitting: ${percentSitting.toFixed(2)}%`;
+
+        }else if(view === "total"){
+            document.getElementById("content").innerHTML =
+                `<b>Table Stats Total</b><br>`+
+                `Total time: ${total} seconds<br>`+
+                `Standing: ${totalStanding} seconds<br>`+
+                `Sitting: ${totalSitting} seconds`;
+        }
+    }
+</script>
+</body>
+</html>
