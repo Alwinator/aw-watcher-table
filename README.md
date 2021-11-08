@@ -2,6 +2,8 @@
 
 An [Activity Watch](https://github.com/ActivityWatch/activitywatch) watcher which monitors whether you have set your height-adjustable table to sitting or standing.
 
+### Also try my new utilization watcher: [aw-watcher-utilization](https://github.com/Alwinator/aw-watcher-utilization)
+
 ![1](img/aw-watcher-table-1.jpg)
 
 # Idea
