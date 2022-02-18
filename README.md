@@ -1,5 +1,6 @@
 # aw-watcher-table
 [![Create releases for Linux and Windows](https://github.com/Alwinator/aw-watcher-table/actions/workflows/build-release.yml/badge.svg)](https://github.com/Alwinator/aw-watcher-table/actions/workflows/build-release.yml)
+[![stars](https://img.shields.io/github/stars/Alwinator/aw-watcher-table)](https://github.com/Alwinator/aw-watcher-table)
 
 An [Activity Watch](https://github.com/ActivityWatch/activitywatch) watcher which monitors whether you have set your height-adjustable table to sitting or standing.
 
