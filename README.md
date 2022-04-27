@@ -10,13 +10,13 @@ An [Activity Watch](https://github.com/ActivityWatch/activitywatch) watcher whic
 
 # Idea
 
-Unfortunately my adjustable table doesn't have an API or anything similar. Therefore I need an external device which measures the height of the table. This external device must have internet access and a distance sensor.
+Unfortunately my adjustable table doesn't have either an API or anything similar. Therefore I need an external device which measures the height of the table. This external device must have internet access and a distance sensor.
 
 # Implementation
 
 ## Hardware
 ### Electronics
-I have used an [ESP8266](https://en.wikipedia.org/wiki/ESP8266) micro controller. It has in-built Wifi and GPIOs to control sensors. As a distance sensor I have used an [HC-SR04 Ultrasonic Sensor](http://wiki.sunfounder.cc/index.php?title=Ultrasonic_Module), because I had it lying around.
+I have used an [ESP8266](https://en.wikipedia.org/wiki/ESP8266) micro controller. It has built-in Wi-Fi and GPIOs to control sensors. As a distance sensor I have used an [HC-SR04 Ultrasonic Sensor](http://wiki.sunfounder.cc/index.php?title=Ultrasonic_Module), because I already had it on hand.
 
 ### Case
 I printed my case using the Prusa I3 MK3. As modeling software I used Fusion360. You can download the 3D model [here (Thingiverse)](https://www.thingiverse.com/thing:4619348).
@@ -27,10 +27,10 @@ I printed my case using the Prusa I3 MK3. As modeling software I used Fusion360.
 
 | Name            | Price  |
 |-----------------|--------|
-| ESP8266         | 6.50€  |
-| HC-SR04         | 5.16€  |
-| 3D Printed Case | ~0.25€ |
-| Total           | 11.91€ |
+| ESP8266         | €6.50  |
+| HC-SR04         | €5.16  |
+| 3D Printed Case | ~€0.25 |
+| Total           | €11.91 |
 
 Definitely affordable.
 
@@ -43,29 +43,8 @@ When the hardware is finished and powered on, it should be possible to get the t
 
 ## Software
 ### Install
-```
-virtualenv venv # create virtual environment
-venv\Scripts\activate # activate virtual environment
-poetry install # install required packages
-```
-### Run
-```
-poetry run aw-watcher-table [--testing] [-v] [--verbose]
-```
-### Build
-```
-pyinstaller --clean pyinstaller.spec
-```
-### Test
-1. Move the aw-watcher-table folder inside the dist folder into the Activity Watch installation location
-2. Restart [Activity Watch](https://github.com/ActivityWatch/activitywatch)
-3. Right click the Activity Watch tray icon. Under modules you should see the aw-table-watcher. Check it to start the aw-watcher-table.
-
-![2](img/aw-watcher-table-deployment.jpg)
-
-### Deploy
-1. Go to the config directory. You can find the path for your OS [here](https://docs.activitywatch.net/en/latest/directories.html#config-directory).
-2. In the aw-qt directory you should find a **aw-qt.ini** file.
+1. Go to the config directory. Find the path for your OS [here](https://docs.activitywatch.net/en/latest/directories.html#config-directory).
+2. In the aw-qt directory find the **aw-qt.ini** file.
 3. Add the aw-table-watcher to autostart_modules to enable auto-start. It should look like this:
 
 ```
@@ -75,3 +54,25 @@ autostart_modules = ["aw-server", "aw-watcher-afk", "aw-watcher-window", "aw-tab
 [aw-qt-testing]
 autostart_modules = ["aw-server", "aw-watcher-afk", "aw-watcher-window", "aw-table-watcher"]
 ```
+
+### DEV setup
+#### Install
+```
+virtualenv venv # create virtual environment
+venv\Scripts\activate # activate virtual environment
+poetry install # install required packages
+```
+#### Run
+```
+poetry run aw-watcher-table [--testing] [-v] [--verbose]
+```
+#### Build
+```
+pyinstaller --clean pyinstaller.spec
+```
+#### Test
+1. Move the aw-watcher-table folder to the Activity Watch installation folder
+2. Restart [Activity Watch](https://github.com/ActivityWatch/activitywatch)
+3. Right click the Activity Watch tray icon. Under Modules find the aw-table-watcher. Check it to start the aw-watcher-table.
+
+![2](img/aw-watcher-table-deployment.jpg)
