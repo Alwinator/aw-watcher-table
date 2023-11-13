@@ -7,7 +7,7 @@ const int TRIGGER_PIN = 2;   // Pin D2, Ultrasonic sensor
 const int ECHO_PIN = 5;      // Pin D5, Ultrasonic sensor
 const int LED = LED_BUILTIN; // Indicator LED
 
-const int MEASURE_CORRECTION = 11; // Added to measure value since te tabletop is higher that the sensor
+const int MEASURE_CORRECTION = 9; // Added to measure value since te tabletop is higher that the sensor
 
 // Init web server with port 80
 int status = WL_IDLE_STATUS;
@@ -42,9 +42,9 @@ void setup(void)
   {
     // Connect to WPA/WPA2 network.
     status = WiFi.begin(WIFI_SSID, WIFI_PSK);
-    Serial.print("...");
+    Serial.print(".");
     // wait 1 seconds for connection:
-    delay(1000);
+    delay(5000);
   }
 
   // Print debug info via serial
@@ -62,7 +62,7 @@ void loop()
 
   if (client)
   {                               // if you get a client,
-    Serial.println("new client"); // print a message out the serial port
+    // Serial.println("new client"); // print a message out the serial port
     String currentLine = "";      // make a String to hold incoming data from the client
     while (client.connected())
     { // loop while the client's connected
@@ -106,7 +106,7 @@ void loop()
     }
     // close the connection:
     client.stop();
-    Serial.println("client disconnected");
+    // Serial.println("client disconnected");
     digitalWrite(LED, LOW);
   }
 }
