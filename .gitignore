@@ -4,3 +4,6 @@ build
 dist
 venv
 .idea
+Arduino_UNO_WIFI_r2/libraries/
+.vscode/arduino.json
+Arduino_UNO_WIFI_r2/secrets.h

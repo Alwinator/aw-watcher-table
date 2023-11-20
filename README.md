@@ -49,10 +49,10 @@ When the hardware is finished and powered on, it should be possible to get the t
 
 ```
 [aw-qt]
-autostart_modules = ["aw-server", "aw-watcher-afk", "aw-watcher-window", "aw-table-watcher"]
+autostart_modules = ["aw-server", "aw-watcher-afk", "aw-watcher-window", "aw-watcher-table"]
 
 [aw-qt-testing]
-autostart_modules = ["aw-server", "aw-watcher-afk", "aw-watcher-window", "aw-table-watcher"]
+autostart_modules = ["aw-server", "aw-watcher-afk", "aw-watcher-window", "aw-watcher-table"]
 ```
 
 ### DEV setup
